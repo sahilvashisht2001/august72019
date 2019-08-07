@@ -1,11 +1,12 @@
-const http=require('http');
-const site=http.createServer(function(req,res){
+var express=require('express')
+var app=express()
 
-    console.log('Hello world')
-    
-    res.setHeader('Content-Type','text/html');
-    console.log(req.rawHeaders);
-    res.end('<h1>Hello class</h1>');
+app.get('/',function(req,res){
+    res.send('Hell World')
 });
 
-site.listen(3000);
+app.post('/',function(req,res){
+    res.send('Hell World')
+});
+
+app.listen(3000);
